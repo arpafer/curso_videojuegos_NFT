@@ -1,0 +1,34 @@
+<div class="center-around">
+  <section *ngFor="let lip of this.lips$ | async; else empty">
+    <!-- <h3 class="white">{{ this.lipsView[lip.id].name }} </h3>
+   <pre>{{lip | json}}</pre> -->
+    <mat-card class="cardNFT">
+      <mat-card-header>
+        <mat-card-title>{{lip.id}}</mat-card-title>
+        <mat-card-subtitle>NAME: {{lip.name}}</mat-card-subtitle>
+        <mat-card-subtitle>DNA: {{lip.dna}}</mat-card-subtitle>
+        <mat-card-subtitle>Level: {{lip.level}}</mat-card-subtitle>
+        <mat-card-subtitle>Rarity: {{lip.rarity}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="panelNFT">
+          <img class="part" src="{{ this.getBg(this.lipsView[lip.id]) }}" />
+          <img class="part" src="{{ this.getMask(this.lipsView[lip.id]) }}" />
+          <img class="part" src="{{ this.getLine(this.lipsView[lip.id]) }}" />
+          <img class="part" src="{{ this.getAddon(this.lipsView[lip.id]) }}" />
+          <img class="part" src="{{ this.getAddonMouth1(this.lipsView[lip.id]) }}" />
+          <img class="part" src="{{ this.getAddonMouth2(this.lipsView[lip.id]) }}" />
+          <img class="part" src="{{ this.getAddonMouth3(this.lipsView[lip.id]) }}" />
+          <img class="part" src="{{ this.getRarity(this.lipsView[lip.id]) }}" />
+        </div>
+      </mat-card-content>
+      <mat-card-actions >
+        <button class="center-around" mat-raised-button color="warn" (click)="levelUp(lip)">Subir Nivel</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+
+  <ng-template #empty>
+    <h4 class="white">No hay ningún NFT creado todavía</h4>
+  </ng-template>
+</div>

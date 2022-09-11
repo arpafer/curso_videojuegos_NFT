@@ -18,6 +18,10 @@ import { RouterModule} from "@angular/router";
 // Services
 import { ContractService } from "../services/contract/contract.service";
 import { ThreeBox } from "../services/3box.service";
+import { MainComponent } from './main/main.component';
+import { GameComponent } from './game/game.component';
+import { LipsComponent } from './game/lips/lips.component';
+import { ErrorPanelComponent } from './shared/error-panel/error-panel.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { ThreeBox } from "../services/3box.service";
     HomeComponent,
     TopNavComponent,
     TransactionComponent,
-    ErrorComponent
+    ErrorComponent,
+    MainComponent,
+    GameComponent,
+    LipsComponent,
+    ErrorPanelComponent
   ],
   imports: [
     CommonModule,

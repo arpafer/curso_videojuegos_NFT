@@ -20,7 +20,7 @@ contract LipToken is ERC721, Ownable {
     uint256 counter;
     // fijación en el precio de los tokens NFT
     uint256 fee = 1 ether;
-    uint256 feeLevel = 0.05 ether;
+    uint256 feeLevel = 1 ether;
     // Estructura de datos con las propiedades del lip (labio)
     struct Lip {
         string name;
@@ -102,12 +102,14 @@ contract LipToken is ERC721, Ownable {
         return result;
     }
 
-    function levelUp(uint256 _lipId) public payable {        
+    function levelUp(uint256 _lipId) public {        
         require(ownerOf(_lipId) == msg.sender, "Usted no es el duenio de este NFT") ;
-        require(msg.value >= feeLevel, "No tiene suficientes fondos para subir de nivel");
+       //  require(msg.value >= 0.05 ether, "No tiene suficientes fondos para subir de nivel");
         Lip storage lip = lips[_lipId];
         lip.level++;        
     }
 
-
+    function isContractOwner(address _address) public view returns (bool) {
+        return _address == owner();
+    }
 }

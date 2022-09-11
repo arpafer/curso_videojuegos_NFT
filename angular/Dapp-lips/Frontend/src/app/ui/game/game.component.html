@@ -1,0 +1,27 @@
+<div class="text-center-full">
+  <h1 class="white">Bienvenido a Ciber-Lips</h1>
+</div>
+
+<div class="center-around">
+  <h3 class="white">Cuenta conectada: <span color="primary">{{account}}</span> </h3>
+  <h3 class="white">Balance de cuenta: {{accountBalance}}</h3>
+</div>
+
+<div class="center-around" *ngIf="isContractOwner; else noOwner">
+  <h3 class="white">Número de NFTs: {{this.numNfts}} </h3>
+  <h3 class="white">Balance Smart Contract: {{balanceSC}} ethers </h3>
+  <button mat-raised-button color="primary" (click)="retirarMoney()">RETIRAR DINERO</button>
+</div>
+<ng-template #noOwner>
+  <div class="center-around">
+    <h3 class="white">Número de NFTs: {{this.numNfts}}</h3>
+  </div>
+</ng-template>
+
+<div class="text-center-full">
+  <button mat-raised-button color="primary" (click)="clickMintear()">CREAR NUEVO NFT</button>
+</div>
+
+<div class="center-around">
+  <app-lips (NFTcount)="setNFTCount($event)"></app-lips>
+</div>

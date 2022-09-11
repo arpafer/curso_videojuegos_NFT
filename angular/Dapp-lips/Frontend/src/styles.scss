@@ -1,3 +1,35 @@
 body {
-  margin: 0;
+  margin: 0; 
+  background-color: transparent;
+  background-image: url("assets/images/bg/_color.png");
 }
+
+.text-center-full {
+   display:flex;
+   flex-direction: row;
+   align-content:center;
+   justify-content: center;   
+}
+
+.fill-vert-space {
+  display: flex;
+  flex: 1 1 auto; 
+  flex-direction: column;
+}
+
+.center-around {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.white {
+  color: white;
+}
+
+.fill-remaining-space {
+   flex: 1 1 auto;
+   height: 300px;
+ }
